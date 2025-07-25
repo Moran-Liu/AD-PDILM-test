@@ -13,7 +13,7 @@ AD-PDILM 是一个感知决策一体化大模型，通过创新的对象级场�
 ## 训练
 要在数据集上运行AD-PDILM训练，请运行：
 ```bash
-python Model/lit_train.py user=$USER model=AD-PDILM
+python Model/lit_train.py model=AD-PDILM
 ```
 要更改任何超参数，请查看`Model/AD-PDILM.yaml`。对于一般训练设置（例如，GPU数量），请查看`Model/config.yaml`。
 
@@ -23,7 +23,7 @@ python Model/lit_train.py user=$USER model=AD-PDILM
 启动Carla服务器（参见[数据生成](#数据生成)）。  
 当服务器运行时，启动评估：
 ```bash
-python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMmedium3x eval=longest6
+python leaderboard/scripts/run_evaluation.py experiments=AD-PDILMmedium3x eval=longest6
 ```
 你可以在模型文件夹内新创建的评估文件夹中找到评估结果。如果你想要一个（非常简约的）可视化，你可以设置`viz`标志（即，`python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMmedium3x eval=longest6 viz=1`）。
 
@@ -36,7 +36,7 @@ python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMmedi
 
 当服务器运行时，启动评估：
 ```bash
-python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMSubmission track=SENSORS eval=longest6 save_path=SENSORSagent
+python leaderboard/scripts/run_evaluation.py experiments=AD-PDILMSubmission track=SENSORS eval=longest6 save_path=SENSORSagent
 ```
 可视化可以通过`viz`标志激活，TransFuser repo中的解锁可以通过`experiments.unblock`标志激活。
 
@@ -45,6 +45,6 @@ python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMSubm
 
 当服务器运行时，启动评估：
 ```bash
-python leaderboard/scripts/run_evaluation.py user=$USER experiments=AD-PDILMSubmissionMap track=MAP eval=longest6 save_path=MAPagent
+python leaderboard/scripts/run_evaluation.py experiments=AD-PDILMSubmissionMap track=MAP eval=longest6 save_path=MAPagent
 ```
 可视化可以通过`viz`标志激活，TransFuser repo中的解锁可以通过`experiments.unblock`标志激活。
