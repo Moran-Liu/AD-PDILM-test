@@ -5,9 +5,7 @@ AD-PDILM 是一个感知决策一体化大模型，通过创新的对象级场�
 # 内容
 * [训练](#训练)
 * [评估](#评估)
-* [可解释性](#可解释性)
 * [感知AD-PDILM](#感知ad-pdilm)
-* [引用](#引用)
 
 
 
@@ -15,9 +13,9 @@ AD-PDILM 是一个感知决策一体化大模型，通过创新的对象级场�
 ## 训练
 要在数据集上运行AD-PDILM训练，请运行：
 ```bash
-python training/AD-PDILM/lit_train.py user=$USER model=AD-PDILM
+python Model/lit_train.py user=$USER model=AD-PDILM
 ```
-要更改任何超参数，请查看`training/config/model/AD-PDILM.yaml`。对于一般训练设置（例如，GPU数量），请查看`training/config/config.yaml`。
+要更改任何超参数，请查看`Model/AD-PDILM.yaml`。对于一般训练设置（例如，GPU数量），请查看`Model/config.yaml`。
 
 ## 评估
 这将在指定的基准（默认：longest6）上评估AD-PDILM模型。配置在`carla_agent_files/config`文件夹中指定。
